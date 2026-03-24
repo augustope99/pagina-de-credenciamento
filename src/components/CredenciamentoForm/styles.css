@@ -1,0 +1,437 @@
+.form-content {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de brilho superior */
+.form-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+}
+
+.animate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.partner-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+input, select, textarea {
+  background: var(--color-input-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  color: var(--color-text-main);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(31, 201, 201, 0.15);
+  background: #141414;
+}
+
+input::placeholder {
+  color: #555;
+}
+
+/* Botões */
+.btn-validate, .submit-btn {
+  background: var(--primary-color);
+  color: #101010;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-validate:hover, .submit-btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(31, 201, 201, 0.4);
+}
+
+.btn-validate:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+/* Section Headers */
+.section-header {
+  margin-top: 20px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.section-header h3 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Checkbox e Radio Customizados */
+.checkbox-group, .radio-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.checkbox-group input[type="checkbox"], 
+.radio-group input[type="radio"] {
+  accent-color: var(--primary-color);
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox-group label, .radio-group label {
+  color: var(--color-text-main);
+  cursor: pointer;
+}
+
+/* Upload Section */
+.upload-section {
+  border: 2px dashed var(--color-border);
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  transition: 0.3s;
+  background: rgba(255,255,255,0.02);
+  margin-top: 20px;
+}
+
+.upload-section:hover {
+  border-color: var(--primary-color);
+  background: rgba(31, 201, 201, 0.05);
+}
+
+.upload-label {
+  display: block;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Estilização Profissional do Input File */
+input[type="file"] {
+  background: rgba(0,0,0,0.2);
+  border: 1px dashed var(--color-border);
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+input[type="file"]:hover {
+  border-color: var(--primary-color);
+  background: rgba(31, 201, 201, 0.05);
+}
+
+input[type="file"]::file-selector-button {
+  background: var(--primary-color);
+  color: #101010;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-right: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: var(--secondary-color);
+}
+
+/* Controle de Quantidade (POS) */
+.quantity-control {
+  display: flex;
+  align-items: center;
+  background: var(--color-input-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+  width: 140px; /* Largura fixa para ficar elegante */
+}
+
+.qty-btn {
+  background: #2a2a2a;
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 44px; /* Mesma altura do input */
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-btn:hover {
+  background: var(--primary-color);
+  color: #101010;
+}
+
+.qty-input {
+  border: none;
+  border-radius: 0;
+  text-align: center;
+  width: 100%;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  height: 44px;
+  /* Remove setas padrão do navegador */
+  -moz-appearance: textfield;
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.qty-input:focus {
+  box-shadow: none;
+  background: rgba(255,255,255,0.05);
+}
+
+/* Status Messages */
+.status-msg {
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #666;
+}
+
+.status-msg.success { border-color: #28a745; color: #28a745; }
+.status-msg.warning { border-color: #ffc107; color: #ffc107; }
+.status-msg.error { border-color: #ff5252; color: #ff5252; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsividade Desktop */
+@media (min-width: 768px) {
+  .form-content {
+    padding: 40px;
+  }
+  .partner-group {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+/* Tabelas e Informações Extras */
+.info-title {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 5px;
+}
+
+.info-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-list li {
+  margin-bottom: 6px;
+  color: #ccc;
+}
+
+.info-list li strong {
+  color: #fff;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.rates-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: #252525;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rates-table th, .rates-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.rates-table th {
+  background: var(--secondary-color);
+  color: #101010;
+}
+
+.rates-table td {
+  color: #ddd;
+}
+
+.terms-box {
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--color-border);
+  padding: 20px;
+  height: 200px;
+  overflow-y: auto;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.signature-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.signature-label {
+  display: block;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.signature-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #000000;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--primary-color);
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+}
+
+.signature-container:hover {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 15px rgba(31, 201, 201, 0.1);
+}
+
+.signature-canvas {
+  border: 1px dashed #bbb;
+  background: #fff;
+  cursor: crosshair;
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.signature-footer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.btn-clear-sig {
+  background: rgba(31, 201, 201, 0.05);
+  border: 1px solid rgba(31, 201, 201, 0.3);
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  letter-spacing: 0.5px;
+}
+
+.btn-clear-sig:hover {
+  background: var(--primary-color);
+  color: #101010;
+  border-color: var(--primary-color);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(31, 201, 201, 0.3);
+}
+
+.btn-clear-sig:active {
+  transform: translateY(1px) scale(0.95);
+  box-shadow: 0 2px 5px rgba(31, 201, 201, 0.2);
+}
+
+.signature-hint {
+  display: none; /* Removido pois o design já deixa intuitivo */
+}

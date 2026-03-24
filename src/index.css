@@ -1,0 +1,54 @@
+:root {
+  /* Paleta Profissional Permite */
+  --color-bg-dark: #0D0D0D;
+  --color-bg-card: #1A1A1A;
+  --color-primary-red: #C41037;
+  --color-dark-red: #7D1C2F;
+  --color-border: #484848;
+  --color-text-main: #FFFFFF;
+  --color-text-muted: #A0A0A0;
+  --color-input-bg: #0f0f0f;
+
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 15px rgba(196, 16, 55, 0.15);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-dark);
+  /* Background */
+  background-image: 
+    linear-gradient(rgba(13, 13, 13, 0.486), rgba(13, 13, 13, 0.438)),
+    url('../background.png'); /* Caminho relativo para funcionar em subpastas */
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  font-family: var(--font-sans);
+  color-scheme: light dark;
+  color: var(--color-text-main);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Customizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border); 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark-red); 
+}
