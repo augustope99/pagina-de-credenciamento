@@ -30,16 +30,13 @@ Esta é uma versão demonstrativa (portfólio) de um sistema de credenciamento c
 git clone https://github.com/seu-usuario/enterprise-onboarding-demo.git
 ```
 
-2. Instale as dependências:
-```bash
-npm install
-```
-
-3. Rode o projeto:
+2. Rode o projeto via CMD na pasta raiz:
 ```bash
 npm run dev
 ```
+3. Caso não rode por falta de dependencias use: npm install na pasta raiz e siga o passo 2 novamente.
 
+   
 ## 🧪 Dados para Teste
 
 Como o backend é mockado, você pode utilizar qualquer e-mail para login.
